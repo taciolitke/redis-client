@@ -1,0 +1,13 @@
+version: '2'
+services:
+  redis:
+    image: grokzen/redis-cluster:latest
+    container_name: redis-cluster
+    environment:
+      IP: '0.0.0.0'
+      INITIAL_PORT: 8000
+      MASTERS: 3
+      SLAVES_PER_MASTER: 2
+    hostname: redis
+    ports:
+      - '8000-8004:8000-8004'
